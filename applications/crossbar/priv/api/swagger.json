@@ -1963,7 +1963,11 @@
                 },
                 "strategy": {
                     "default": "simultaneous",
-                    "description": "",
+                    "description": "Ringing strategy for the endpoint",
+                    "enum": [
+                        "simultaneous",
+                        "single"
+                    ],
                     "type": "string"
                 },
                 "suppress_clid": {
