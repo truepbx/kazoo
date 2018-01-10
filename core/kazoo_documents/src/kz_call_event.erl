@@ -266,6 +266,6 @@ callee_id(JObj) ->
 recording_length(JObj) ->
     kz_json:get_integer_value(<<"Length">>, JObj).
 
--spec fetch_id(doc()) -> api_ne_binary().
+-spec fetch_id(doc()) -> kz_term:api_ne_binary().
 fetch_id(JObj) ->
     kz_json:get_ne_binary_value(<<"Fetch-ID">>, JObj).
