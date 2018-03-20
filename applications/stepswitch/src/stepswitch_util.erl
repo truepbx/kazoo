@@ -75,12 +75,21 @@ get_outbound_destination(OffnetReq) ->
 %% callerid.
 %% @end
 %%------------------------------------------------------------------------------
--spec correct_shortdial(kz_term:ne_binary(), kz_term:ne_binary() | kapi_offnet_resource:req()) -> kz_term:api_binary().
-correct_shortdial(<<"+", Number/binary>>, CIDNum) ->
-    correct_shortdial(Number, CIDNum);
-correct_shortdial(Number, <<"+", CIDNum/binary>>) ->
-    correct_shortdial(Number, CIDNum);
-correct_shortdial(Number, CIDNum) when is_binary(CIDNum) ->
+-spec correct_shortdial(kz_term:ne_binary(), kapi_offnet_resource:req()) -> kz_term:api_binary().
+correct_shortdial(Number, OffnetReq) ->
+    CIDNum = case stepswitch_bridge:bridge_outbound_cid_number(OffnetReq) of
+                 'undefined' -> Number;
+                 N -> N
+             end,
+    DeniedCallRestrictions = kapi_offnet_resource:denied_call_restrictions(OffnetReq),
+    correct_shortdial(Number, CIDNum, DeniedCallRestrictions).
+
+-spec correct_shortdial(kz_term:ne_binary(), kz_term:ne_binary(), kz_json:object()) -> kz_term:api_binary().
+correct_shortdial(<<"+", Number/binary>>, CIDNum, DeniedCallRestrictions) ->
+    correct_shortdial(Number, CIDNum, DeniedCallRestrictions);
+correct_shortdial(Number, <<"+", CIDNum/binary>>, DeniedCallRestrictions) ->
+    correct_shortdial(Number, CIDNum, DeniedCallRestrictions);
+correct_shortdial(Number, CIDNum, DeniedCallRestrictions) when is_binary(CIDNum) ->
     MaxCorrection = kapps_config:get_integer(?SS_CONFIG_CAT, <<"max_shortdial_correction">>, 5),
     MinCorrection = kapps_config:get_integer(?SS_CONFIG_CAT, <<"min_shortdial_correction">>, 2),
     case byte_size(CIDNum) - byte_size(Number) of
@@ -89,18 +98,23 @@ correct_shortdial(Number, CIDNum) when is_binary(CIDNum) ->
             CorrectedNumber = knm_converters:normalize(<<Correction/binary, Number/binary>>),
             lager:debug("corrected shortdial ~s via CID ~s to ~s"
                        ,[Number, CIDNum, CorrectedNumber]),
-            CorrectedNumber;
+            Classification = knm_converters:classify(CorrectedNumber),
+            lager:debug("Re-classified number ~s as ~s, testing for call restrictions"
+                       ,[CorrectedNumber, Classification]
+                       ),
+            case kz_json:get_value([Classification, <<"action">>], DeniedCallRestrictions) of
+                'undefined' ->
+                    CorrectedNumber;
+                _ ->
+                    lager:debug("unable to correct shortdial ~s via CID ~s due to a call restriction"
+                               ,[Number, CIDNum]),
+                    'undefined'
+            end;
         _ ->
             lager:debug("unable to correct shortdial ~s via CID ~s"
                        ,[Number, CIDNum]),
             'undefined'
-    end;
-correct_shortdial(Number, OffnetReq) ->
-    CIDNum = case stepswitch_bridge:bridge_outbound_cid_number(OffnetReq) of
-                 'undefined' -> Number;
-                 N -> N
-             end,
-    correct_shortdial(Number, CIDNum).
+    end.
 
 -spec get_sip_headers(kapi_offnet_resource:req()) -> kz_json:object().
 get_sip_headers(OffnetReq) ->
