@@ -1,40 +1,27 @@
+############ Doc Status Key #################
+# | #  : Needs cleanup
+# | ##  : Incomplete
+# | ### : Entirely Missing
+
 site_name: Kazoo REST API Reference
 
 pages:
 - 'index.md'
+
 - 'Using REST API':
-  - 'applications/crossbar/doc/basics.md' ## needs clean up and removal of authentication section
+  - 'applications/crossbar/doc/basics.md' #
   ##BUILD add a pages on how to use cURL or Postman (https://docs.2600hz.com/ui/docs/using-postman-as-a-crud/)
   - 'Authenticating REST request': 'applications/crossbar/doc/how_to_authenticate.md'
-- 'The Basics':
-  - 'Quick Start':
-    - 'applications/crossbar/doc/api_authentication.md'
-  - 'Common Tasks':
-#BUILD Intro to accounts (what they are for, when to use them, encourage the user to do this last)
-    - 'Account Management' : 'applications/crossbar/doc/accounts.md'
-#    - 'Billing Users, Devices and DIDs' : 'tutorial/count_devices.md' ### This file is DELETED or RENAMED
-#    - 'Processing CDRs' : 'tutorial/count_devices.md' ### This file is DELETED or RENAMED
-#    - 'Generating Stats' : 'tutorial/call_stats.md' ### This file is DELETED or RENAMED
-#    - 'Bulk Provisioning' : 'tutorial/bulk_provision.md' ### This file is DELETED or RENAMED
-#    - 'Event Notification' : 'tutorial/webhooks.md' ### This file is DELETED or RENAMED
-#    - 'Streaming Live Activity' : 'tutorial/stream_events.md' ### This file is DELETED or RENAMED
-#    - 'Controlling Calls' : 'tutorial/call_control.md' ### This file is DELETED or RENAMED
 
-  - 'Authentication':
-#    - 'applications/crossbar/doc/auth.md'
-    - 'applications/crossbar/doc/basic_auth.md' ##
-#    - 'applications/crossbar/doc/ip_auth.md' ##
-#    - 'Adding Multi-factor': 'applications/crossbar/doc/multi_factor.md'
-#    - 'applications/crossbar/doc/security.md'
-#    - 'applications/crossbar/doc/shared_auth.md' ##
-#    - 'applications/crossbar/doc/token_auth.md'
-#    - 'applications/crossbar/doc/ubiquiti_auth.md'
-#    - 'applications/crossbar/doc/user_authentication.md'
+#BUILD Maybe add core concept describing the kazoo system, account/user/devices and how callflow works?
+#BUILD  - 'Basic Phone Number Setup':
+#BUILD    - 'Buying a Number': 'applications/crossbar/doc/phone_numbers_buy.md' ### This file is DELETED or RENAMED
+#BUILD    - 'Routing a Number to a Callflow': 'applications/crossbar/doc/callflows_basic.md'  # (Basic callflow) ### This file is DELETED or RENAMED
+# - 'Core Concept':
 
-- 'System Preparation':
-  - 'Branding':
-    - 'applications/crossbar/doc/whitelabeling.md' ##
-# Email notifications? Macros? Templates?
+- 'Account Preparation':
+  - 'Branding': 'applications/crossbar/doc/whitelabeling.md' ##
+  # Email notifications? Macros? Templates?
 
   - 'Limits and Rating':
     - 'applications/crossbar/doc/allotments.md' ##
@@ -57,65 +44,113 @@ pages:
     - 'applications/crossbar/doc/devices.md'
     - 'applications/crossbar/doc/users.md'
 
-#BUILD  - 'Basic Phone Number Setup':
-#BUILD    - 'Buying a Number': 'applications/crossbar/doc/phone_numbers_buy.md' ### This file is DELETED or RENAMED
-#BUILD    - 'Routing a Number to a Callflow': 'applications/crossbar/doc/callflows_basic.md'  # (Basic callflow) ### This file is DELETED or RENAMED
 
   - 'Features':
     - 'Conference Bridges':
       - 'Configuring Conference Rooms': 'applications/crossbar/doc/conference.md'
-      - 'Routing to Conferences': 'applications/callflow/doc/conference.md'
     - 'Menus':
       - 'applications/crossbar/doc/menus.md' ##
-      - 'Routing to Menu': 'applications/callflow/doc/menu.md' ##
     - 'Voicemail':
       - 'Voicemail Boxes': 'applications/crossbar/doc/voicemail.md'
-      - 'Voicemail Routing': 'applications/callflow/doc/voicemail.md'
     - 'Fax':
       - 'applications/crossbar/doc/faxes.md'
-      - 'Fax Routing': 'applications/callflow/doc/faxbox.md' ##
-      - 'Receive Fax': 'applications/callflow/doc/faxbox.md' ##'
     - 'Groups':
       - 'Group Object' : 'applications/crossbar/doc/groups.md' ##
-      - 'Ring Group': 'applications/callflow/doc/ring_group.md'
-#     - 'Ring Group Toggle': 'applications/callflow/doc/ring_group_toggle.md'
-      - 'Page Group': 'applications/callflow/doc/page_group.md' ##
     - 'Hotdesking':
       - 'applications/crossbar/doc/hotdesks.md'
-      - 'Hotdesk Routing': 'applications/callflow/doc/hotdesk.md' ##
     - 'Directories':
       - 'applications/crossbar/doc/directories.md'
-      - 'Directory Search': 'applications/callflow/doc/directory.md' ##
     - 'Call Recording':
       - 'applications/crossbar/doc/recordings.md'
-      - 'Record Call': 'applications/callflow/doc/record_call.md'
-      - 'Record Caller': 'applications/callflow/doc/record_caller.md' ##
     - 'Caller ID':
-#      - 'Dynamic Caller ID': 'applications/callflow/doc/dynamic_cid.md'
-#      - 'Lookup Caller ID': 'applications/callflow/doc/lookupcidname.md'
-      - 'Prepend Caller ID': 'applications/callflow/doc/prepend_cid.md'
-      - 'Privacy': 'applications/callflow/doc/privacy.md'
-#      - 'Match CID': 'applications/callflow/doc/cidlistmatch.md'
-      - 'Set CID': 'applications/callflow/doc/set_cid.md' ##
-#      - 'Check CID': 'applications/callflow/doc/check_cid.md'
-    - 'Intercom': 'applications/callflow/doc/intercom.md' ##
     - 'Feature':
-      - 'Call Forwarding': 'applications/callflow/doc/call_forward.md'
-      - 'Group Pickup': 'applications/callflow/doc/group_pickup.md' ##
-      - 'Feature Code': 'applications/callflow/doc/group_pickup_feature.md' ##
 
+## Go over all callflow actions, remove those pages which are not documenting an action
+- 'Callflow Actions'
+  - 'Routing to Conferences': 'applications/callflow/doc/conference.md'
+  - 'Routing to Menu': 'applications/callflow/doc/menu.md' ##
+  - 'Voicemail Routing': 'applications/callflow/doc/voicemail.md'
+  - 'Fax Routing': 'applications/callflow/doc/faxbox.md' ##
+  - 'Receive Fax': 'applications/callflow/doc/faxbox.md' ##'
+  - 'Ring Group': 'applications/callflow/doc/ring_group.md'
+  # - 'Ring Group Toggle': 'applications/callflow/doc/ring_group_toggle.md'
+  - 'Page Group': 'applications/callflow/doc/page_group.md' ##
+  - 'Hotdesk Routing': 'applications/callflow/doc/hotdesk.md' ##
+  - 'Directory Search': 'applications/callflow/doc/directory.md' ##
+  - 'Record Call': 'applications/callflow/doc/record_call.md'
+  - 'Record Caller': 'applications/callflow/doc/record_caller.md' ##
+  # - 'Dynamic Caller ID': 'applications/callflow/doc/dynamic_cid.md'
+  # - 'Lookup Caller ID': 'applications/callflow/doc/lookupcidname.md'
+  - 'Prepend Caller ID': 'applications/callflow/doc/prepend_cid.md'
+  - 'Privacy': 'applications/callflow/doc/privacy.md'
+  # - 'Match CID': 'applications/callflow/doc/cidlistmatch.md'
+  - 'Set CID': 'applications/callflow/doc/set_cid.md' ##
+  # - 'Check CID': 'applications/callflow/doc/check_cid.md'
+  - 'Intercom': 'applications/callflow/doc/intercom.md' ##
+  - 'Call Forwarding': 'applications/callflow/doc/call_forward.md'
+  - 'Group Pickup': 'applications/callflow/doc/group_pickup.md' ##
+  - 'Feature Code': 'applications/callflow/doc/group_pickup_feature.md' ##
+  - 'Temporal Routes (Time of Day)': 'applications/callflow/doc/temporal_route.md' ##
+  - 'Play Media To Caller': 'applications/callflow/doc/play.md' ##
+  - 'Webhooks': 'applications/callflow/doc/webhooks.md'
+  - 'Custom Webhook': 'applications/callflow/doc/webhook.md' ##
+  - 'applications/callflow/doc/resources.md'
+  - 'Branching to Another Callflow': 'applications/callflow/doc/callflow.md'
+  # - 'Call Parking': 'applications/callflow/doc/park.md'
+  # - 'Set Call Variable': 'applications/callflow/doc/set_variable.md' ##
+  # - 'Text-to-speech (TTS)': 'applications/callflow/doc/tts.md' ##
+  # - 'Sleep': 'applications/callflow/doc/sleep.md' ##
+  # - 'Hangup': 'applications/callflow/doc/hangup.md' ###
+  # - 'applications/callflow/doc/acdc_agent.md'
+  # - 'applications/callflow/doc/acdc_member.md'
+  # - 'applications/callflow/doc/acdc_queue.md'
+  # - 'applications/callflow/doc/after_bridge.md'
+  # - 'applications/callflow/doc/audio_macro.md'
+  # - 'applications/callflow/doc/branch_bnumber.md'
+  # - 'applications/callflow/doc/branch_variable.md'
+  # - 'applications/callflow/doc/call_priorities.md'
+  # - 'applications/callflow/doc/call_waiting.md'
+  # - 'applications/callflow/doc/camping_feature.md'
+  # - 'applications/callflow/doc/cf_branch_variable.md'
+  # - 'applications/callflow/doc/collect_dtmf.md'
+  # - 'applications/callflow/doc/custom_sip_headers.md'
+  # - 'applications/callflow/doc/dead_air.md'
+  # - 'applications/callflow/doc/device.md'
+  # - 'applications/callflow/doc/do_not_disturb.md'
+  # - 'applications/callflow/doc/eavesdrop_feature.md'
+  # - 'applications/callflow/doc/eavesdrop.md'
+  # - 'applications/callflow/doc/edr.md'
+  # - 'applications/callflow/doc/fax_detect.md'
+  # - 'applications/callflow/doc/flush_dtmf.md'
+  # - 'applications/callflow/doc/group.md'
+  # - 'applications/callflow/doc/intercept_feature.md'
+  # - 'applications/callflow/doc/intercept.md'
+  # - 'applications/callflow/doc/language.md'
+  # - 'applications/callflow/doc/manual_presence.md'
+  # - 'applications/callflow/doc/missed_call_alert.md'
+  # - 'applications/callflow/doc/move.md'
+  # - 'applications/callflow/doc/nomorobo.md'
+  # - 'applications/callflow/doc/offnet.md'
+  # - 'applications/callflow/doc/pivot.md'
+  # - 'applications/callflow/doc/preflow.md'
+  # - 'applications/callflow/doc/README.md'
+  # - 'applications/callflow/doc/receive_fax.md'
+  # - 'applications/callflow/doc/response.md'
+  # - 'applications/callflow/doc/route_to_cid.md'
+  # - 'applications/callflow/doc/send_dtmf.md'
+  # - 'applications/callflow/doc/set.md'
+  # - 'applications/callflow/doc/set_variables.md'
+  # - 'applications/callflow/doc/user.md'
 
 #  - 'SMS':
 #    - 'applications/crossbar/doc/sms.md'
 
   - 'Time of Day Routing':
-    - 'Temporal Routes (Time of Day)': 'applications/callflow/doc/temporal_route.md' ##
     - 'applications/crossbar/doc/temporal_rules.md' ##
     - 'applications/crossbar/doc/temporal_rules_sets.md'
 
   - 'Media Management':
     - 'applications/crossbar/doc/media.md'
-    - 'Play Media To Caller': 'applications/callflow/doc/play.md' ##
 
   - 'Storage':
     - 'applications/crossbar/doc/storage.md'
@@ -138,8 +173,6 @@ pages:
     - 'Administration': 'applications/webhooks/doc/maintenance.md'
     - 'API': 'applications/crossbar/doc/webhooks.md'
 
-  - 'Webhooks': 'applications/callflow/doc/webhooks.md'
-  - 'Custom Webhook': 'applications/callflow/doc/webhook.md' ##
 
 - 'Billing, Reporting and Notifications':
   - 'Billing':
@@ -148,6 +181,16 @@ pages:
   - 'Notifications':
     - 'applications/crossbar/doc/notifications.md'
 
+- 'Authentication':
+  # - 'applications/crossbar/doc/auth.md'
+  - 'applications/crossbar/doc/basic_auth.md' # needs more expplaining
+  # - 'applications/crossbar/doc/ip_auth.md' ##
+  - 'Adding Multi-factor': 'applications/crossbar/doc/multi_factor.md' #
+  - 'applications/crossbar/doc/security.md' #
+  # - 'applications/crossbar/doc/shared_auth.md' ##
+  # - 'applications/crossbar/doc/token_auth.md'
+  # - 'applications/crossbar/doc/ubiquiti_auth.md'
+  - 'applications/crossbar/doc/user_authentication.md' # needs more expplaining
 
 
 #### STARTS "STILL NEEDS SORTING" SECTION - please pair with configuration APIs as applicable, in the right section
@@ -193,8 +236,6 @@ pages:
   - 'Advanced Callflows':
     - 'applications/crossbar/doc/callflows.md'
   - 'Resources':
-    - 'applications/callflow/doc/resources.md'
-  - 'Branching to Another Callflow': 'applications/callflow/doc/callflow.md'
 
 - 'Automated Customer Onboarding':
   - 'Account Management':
@@ -221,11 +262,6 @@ pages:
 #- 'Advanced Integrations':
 #  - 'Call Actions':
 #    - 'applications/crossbar/doc/metaflows.md'
-#    - 'Call Parking': 'applications/callflow/doc/park.md'
-#    - 'Set Call Variable': 'applications/callflow/doc/set_variable.md' ##
-#    - 'Text-to-speech (TTS)': 'applications/callflow/doc/tts.md' ##
-#    - 'Sleep': 'applications/callflow/doc/sleep.md' ##
-#    - 'Hangup': 'applications/callflow/doc/hangup.md' ###
 #
 #  - 'Pivot':
 #    - 'Intro': 'applications/pivot/doc/README.md'
@@ -288,21 +324,11 @@ pages:
 #    - 'applications/crossbar/doc/about.md'
     - 'applications/crossbar/doc/acls.md' ##
 
-
-theme: 'material'
-
-
-
 #- 'Articles':
 #  - 'Introduction to Storage Plans - S3': 'doc/blog/storage.md'
 #  - 'Bypass Media Mode': 'doc/blog/bypass_media.md'
 #  - 'Introduction to Rating and Limits': 'doc/reference/routing.md'
 #  - 'Call Recording': 'doc/user_guides/call_recording.md'
-
-############ Doc Status Key #################
-# | ##  : Incomplete
-# | ### : Entirely Missing
-
 
 #################### DO NOT TOUCH BELOW LINES ####################
 # OTHER AVAILABLE PAGES TO ADD
@@ -315,46 +341,6 @@ theme: 'material'
 # 'applications/acdc/doc/ui.md'
 # 'applications/ananke/doc/README.md'
 # 'applications/blackhole/doc/ping.md'
-# 'applications/callflow/doc/acdc_agent.md'
-# 'applications/callflow/doc/acdc_member.md'
-# 'applications/callflow/doc/acdc_queue.md'
-# 'applications/callflow/doc/after_bridge.md'
-# 'applications/callflow/doc/audio_macro.md'
-# 'applications/callflow/doc/branch_bnumber.md'
-# 'applications/callflow/doc/branch_variable.md'
-# 'applications/callflow/doc/call_priorities.md'
-# 'applications/callflow/doc/call_waiting.md'
-# 'applications/callflow/doc/camping_feature.md'
-# 'applications/callflow/doc/cf_branch_variable.md'
-# 'applications/callflow/doc/collect_dtmf.md'
-# 'applications/callflow/doc/custom_sip_headers.md'
-# 'applications/callflow/doc/dead_air.md'
-# 'applications/callflow/doc/device.md'
-# 'applications/callflow/doc/do_not_disturb.md'
-# 'applications/callflow/doc/eavesdrop_feature.md'
-# 'applications/callflow/doc/eavesdrop.md'
-# 'applications/callflow/doc/edr.md'
-# 'applications/callflow/doc/fax_detect.md'
-# 'applications/callflow/doc/flush_dtmf.md'
-# 'applications/callflow/doc/group.md'
-# 'applications/callflow/doc/intercept_feature.md'
-# 'applications/callflow/doc/intercept.md'
-# 'applications/callflow/doc/language.md'
-# 'applications/callflow/doc/manual_presence.md'
-# 'applications/callflow/doc/missed_call_alert.md'
-# 'applications/callflow/doc/move.md'
-# 'applications/callflow/doc/nomorobo.md'
-# 'applications/callflow/doc/offnet.md'
-# 'applications/callflow/doc/pivot.md'
-# 'applications/callflow/doc/preflow.md'
-# 'applications/callflow/doc/README.md'
-# 'applications/callflow/doc/receive_fax.md'
-# 'applications/callflow/doc/response.md'
-# 'applications/callflow/doc/route_to_cid.md'
-# 'applications/callflow/doc/send_dtmf.md'
-# 'applications/callflow/doc/set.md'
-# 'applications/callflow/doc/set_variables.md'
-# 'applications/callflow/doc/user.md'
 # 'applications/call_inspector/doc/README.md'
 # 'applications/cccp/doc/README.md'
 # 'applications/cccp/doc/usage.md'
