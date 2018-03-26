@@ -1,10 +1,13 @@
-site_name: Commercial Reference
+site_name: Kazoo REST API Reference
 
 pages:
 - 'index.md'
+- 'Using REST API':
+  - 'applications/crossbar/doc/basics.md' ## needs clean up and removal of authentication section
+  ##BUILD add a pages on how to use cURL or Postman (https://docs.2600hz.com/ui/docs/using-postman-as-a-crud/)
+  - 'Authenticating REST request': 'applications/crossbar/doc/how_to_authenticate.md'
 - 'The Basics':
   - 'Quick Start':
-    - 'applications/crossbar/doc/basics.md'
     - 'applications/crossbar/doc/api_authentication.md'
   - 'Common Tasks':
 #BUILD Intro to accounts (what they are for, when to use them, encourage the user to do this last)
