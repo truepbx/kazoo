@@ -46,27 +46,17 @@ pages:
 
 
   - 'Features':
-    - 'Conference Bridges':
-      - 'Configuring Conference Rooms': 'applications/crossbar/doc/conference.md'
-    - 'Menus':
-      - 'applications/crossbar/doc/menus.md' ##
-    - 'Voicemail':
-      - 'Voicemail Boxes': 'applications/crossbar/doc/voicemail.md'
-    - 'Fax':
-      - 'applications/crossbar/doc/faxes.md'
-    - 'Groups':
-      - 'Group Object' : 'applications/crossbar/doc/groups.md' ##
-    - 'Hotdesking':
-      - 'applications/crossbar/doc/hotdesks.md'
-    - 'Directories':
-      - 'applications/crossbar/doc/directories.md'
-    - 'Call Recording':
-      - 'applications/crossbar/doc/recordings.md'
-    - 'Caller ID':
-    - 'Feature':
+    - 'Conference': 'applications/crossbar/doc/conference.md'
+    - 'Menus': 'applications/crossbar/doc/menus.md' ##
+    - 'Voicemail': 'applications/crossbar/doc/voicemail.md'
+    - 'Fax': 'applications/crossbar/doc/faxes.md'
+    - 'Group Object' : 'applications/crossbar/doc/groups.md' ##
+    - 'Hotdesking': 'applications/crossbar/doc/hotdesks.md'
+    - 'Directories': 'applications/crossbar/doc/directories.md'
+    - 'Call Recording': 'applications/crossbar/doc/recordings.md'
 
 ## Go over all callflow actions, remove those pages which are not documenting an action
-- 'Callflow Actions'
+- 'Callflow Actions':
   - 'Routing to Conferences': 'applications/callflow/doc/conference.md'
   - 'Routing to Menu': 'applications/callflow/doc/menu.md' ##
   - 'Voicemail Routing': 'applications/callflow/doc/voicemail.md'
@@ -235,7 +225,6 @@ pages:
     - 'applications/crossbar/doc/blacklists.md' ##
   - 'Advanced Callflows':
     - 'applications/crossbar/doc/callflows.md'
-  - 'Resources':
 
 - 'Automated Customer Onboarding':
   - 'Account Management':
